@@ -27,12 +27,30 @@ function greet(person : string, date: Date){
 
 greet("animes", new Date())
 
+// types in typescript : string , number (no s), boolean
 const name: string = "aniesh" 
 let age: number = 21
 let isDead: boolean = true
  // sometime it required to write the primitives types but not everytime 
  // ts automatically got to know what is string or number or boolean (all are in small letters)
  
+// another is the any type : when we dont know the type we dont write it and ts makes it any to way out from errors => dont use it 
+
+
+
+function addFour(num: number){
+    return num + 4
+}
+
+addFour(12)
+
+function signUp(name: string, email: string, isLoggedIn: boolean = false){
+    return `the ${this.name} with ${email} is not loggedin yet`
+}
+
+console.log(signUp("anime", "anie@gfa"));
+
+// we are giving default value to isLoggedIn with = default value 
 
 
 export {} 

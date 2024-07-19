@@ -1,4 +1,6 @@
-const message = "hello";
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+var message = "hello";
 // // message() 
 // // => if we run this : error will appear as message is not a function => typescript helps to find it while writing the code
 // const annousment = "hello world"
@@ -10,7 +12,22 @@ console.log("its typescript");
 // greet("animesh", 22)  to avoid that 2 para is given
 // here we arenot properly defining the types of parameters ( person and date) => we have to do that
 function greet(person, date) {
-    console.log(`hello ${person}, today is ${date.toDateString()}`);
+    console.log("hello ".concat(person, ", today is ").concat(date.toDateString()));
 }
 greet("animes", new Date());
-export {};
+// types in typescript : string , number (no s), boolean
+var name = "aniesh";
+var age = 21;
+var isDead = true;
+// sometime it required to write the primitives types but not everytime 
+// ts automatically got to know what is string or number or boolean (all are in small letters)
+// another is the any type : when we dont know the type we dont write it and ts makes it any to way out from errors => dont use it 
+function addFour(num) {
+    return num + 4;
+}
+addFour(12);
+function signUp(name, email, isLoggedIn) {
+    if (isLoggedIn === void 0) { isLoggedIn = false; }
+    return "the ".concat(name, " with ").concat(email, " is not loggedin yet");
+}
+console.log(signUp("anime", "anie@gfa"));
