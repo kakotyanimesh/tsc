@@ -31,3 +31,41 @@ function signUp(name, email, isLoggedIn) {
     return "the ".concat(name, " with ").concat(email, " is not loggedin yet");
 }
 console.log(signUp("anime", "anie@gfa"));
+// we are giving default value to isLoggedIn with = default value 
+function getVAL(myVAL) {
+    return myVAL;
+}
+console.log(getVAL(22));
+var hellow = function (s) {
+    return s;
+};
+var heros = ["thor", "ironman"];
+heros.map(function (hero) {
+    return "hero is ".concat(hero);
+});
+function consoleError(errText) {
+    console.log(errText);
+}
+// contexual typing => we dont have to explicitely give types
+heros.forEach(function (s) {
+    console.log(s.toUpperCase());
+});
+// function type expressions => giving type to function 
+/*
+    assign type to a function like void means that function wont return anything
+*/
+function greetNew(fn) {
+    fn("hello world"); // here input is a string
+}
+function print(s) {
+    console.log(s);
+}
+greetNew(print); // hello world 
+// we passed print fn inside greetNew => fn => print and "hello world" => s 
+function voidfn(n) {
+    console.log(n);
+}
+//  NEVER type => use it when we want to throw an error
+function handleError(errorText) {
+    throw new Error(errorText);
+}

@@ -45,12 +45,74 @@ function addFour(num: number){
 addFour(12)
 
 function signUp(name: string, email: string, isLoggedIn: boolean = false){
-    return `the ${this.name} with ${email} is not loggedin yet`
+    return `the ${name} with ${email} is not loggedin yet`
 }
 
 console.log(signUp("anime", "anie@gfa"));
 
 // we are giving default value to isLoggedIn with = default value 
+
+function getVAL(myVAL: number): number{
+    return myVAL
+}
+
+console.log(getVAL(22));
+
+
+const hellow = (s: string): string => {
+    return s
+}
+
+
+const heros =["thor", "ironman"]
+
+heros.map((hero) :string => {  // we just add the type of return statement
+    return `hero is ${hero}`
+})
+
+
+function consoleError(errText: string) {
+    console.log(errText);
+    
+} 
+
+// contexual typing => we dont have to explicitely give types
+heros.forEach((s) => { // in 69 : we said return value must be string but we can write without saying => ts can do that
+    console.log(s.toUpperCase()); 
+    
+})
+
+
+// function type expressions => giving type to function 
+
+/*
+    assign type to a function like void means that function wont return anything
+*/
+function greetNew(fn: (a: string) => void) { 
+    fn("hello world")   // here input is a string
+}
+
+function print(s: string): void {
+    console.log(s);
+    
+}
+
+greetNew(print) // hello world 
+// we passed print fn inside greetNew => fn => print and "hello world" => s 
+
+function voidfn(n: number) : void{
+    console.log(n);
+    
+}
+
+//  NEVER type => use it when we want to throw an error
+
+function handleError(errorText: string): never{
+    throw new Error(errorText)
+}
+
+
+
 
 
 export {} 
